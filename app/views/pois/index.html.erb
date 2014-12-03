@@ -1,0 +1,29 @@
+<h1>Your Points of Interest for <%= @itinerary.start.strftime('%a, %b %d, %Y') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @itinerary.pois.each do |poi| %>
+      <tr>
+        <td><%= poi.description %></td>
+        <td><%= link_to 'Show', poi %></td>
+        <td><%= link_to 'Edit', edit_poi_path(poi) %></td>
+        <td><%= link_to 'Delete', poi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="itineraries">
+<%= link_to 'Itineraries', itineraries_path, class: "an_itinerary" %>
+</div>
+
+<%= link_to 'New Point of Interest', new_itinerary_poi_path %>

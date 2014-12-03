@@ -1,0 +1,24 @@
+<%= form_for([@itinerary, @poi]) do |f| %>
+  <% if @poi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@poi.errors.count, "error") %> prohibited this poi from being saved:</h2>
+
+      <ul>
+      <% @poi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+
+  <%= f.hidden_field :itinerary_id, value: @itinerary.id if @itinerary %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
