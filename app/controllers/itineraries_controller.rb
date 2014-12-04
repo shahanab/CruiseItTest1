@@ -25,7 +25,7 @@ class ItinerariesController < ApplicationController
   # POST /itineraries
   # POST /itineraries.json
   def create
-      raise 'hell'
+      # raise 'hell'
 
     @itinerary = Itinerary.new(itinerary_params)
 

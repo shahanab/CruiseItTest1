@@ -3,7 +3,6 @@
 <table>
   <thead>
     <tr>
-      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -11,8 +10,7 @@
   <tbody>
     <% current_user.itineraries.each do |itinerary| %>
       <tr>
-        <td><%= itinerary.description %></td>
-        <td><%= link_to 'Show', itinerary_activities_path(itinerary) %></td>
+        <td><%= link_to itinerary.description, itinerary_activities_path(itinerary) %></td>
         <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
         <td><%= link_to 'Delete', itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
