@@ -25,6 +25,8 @@ class ItinerariesController < ApplicationController
   # POST /itineraries
   # POST /itineraries.json
   def create
+      raise 'hell'
+
     @itinerary = Itinerary.new(itinerary_params)
 
     respond_to do |format|
@@ -70,6 +72,6 @@ class ItinerariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def itinerary_params
-      params.require(:itinerary).permit(:name, :description, :text, :user_id, :start, :end) 
+      params.require(:itinerary).permit(:name, :description, :text, :user_id, :start, :end, :destination) 
     end
 end

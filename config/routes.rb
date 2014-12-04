@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
- 
+
+  resources :destinations
+
   devise_for :users
   resources :itineraries do
-        resources :pois, only: [:index, :new, :create]
+    resources :activities
+       
   end
 
-  resources :pois, only: [:edit, :show, :update, :destroy]
+  resources :pois
   root 'itineraries#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

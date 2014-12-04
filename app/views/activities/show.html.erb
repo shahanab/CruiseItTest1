@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Point of Interest:</strong>
+  <%= @activity.poi %>
+</p>
+
+<p>
+  <strong>Itinerary:</strong>
+  <%= @activity.itinerary.description %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @activity.start_time %>
+</p>
+
+<%= link_to 'Edit', edit_itinerary_activity_path(@itinerary, @activity) %> |
+<%= link_to 'Back', itinerary_activities_path %>

@@ -1,4 +1,4 @@
-<h1>Listing Itineraries</h1>
+<h1>Your Itineraries</h1>
 
 <table>
   <thead>
@@ -9,10 +9,10 @@
   </thead>
 
   <tbody>
-    <% @itineraries.each do |itinerary| %>
+    <% current_user.itineraries.each do |itinerary| %>
       <tr>
         <td><%= itinerary.description %></td>
-        <td><%= link_to 'Show', itinerary_pois_path(itinerary) %></td>
+        <td><%= link_to 'Show', itinerary_activities_path(itinerary) %></td>
         <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
         <td><%= link_to 'Delete', itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

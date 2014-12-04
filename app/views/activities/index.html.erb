@@ -1,0 +1,31 @@
+<h1>Listing activities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Point of Interest</th>
+      <th>Itinerary</th>
+      <th>Start time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @activities %>
+    <% @activities.each do |activity| %>
+          <tr>
+            <td><%= activity.poi.description %></td>
+            <td><%= activity.itinerary.description %></td>
+            <td><%= activity.start_time %></td>
+            <td><%= link_to 'Show', activity.itinerary %></td>
+            <td><%= link_to 'Edit', edit_itinerary_activity_path(activity.itinerary, activity) %></td>
+            <td><%= link_to 'Destroy', itinerary_activity_path(activity.itinerary, activity), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity', new_itinerary_activity_path %>

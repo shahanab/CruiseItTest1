@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Destination.find_or_create_by name: "Virgin Gorda"
+Destination.find_or_create_by name: "Tortola"

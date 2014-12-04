@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  poi_id: 
+  itinerary_id: 
+  start_time: 2014-12-03 18:18:25
+
+two:
+  poi_id: 
+  itinerary_id: 
+  start_time: 2014-12-03 18:18:25

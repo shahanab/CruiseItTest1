@@ -27,8 +27,9 @@
     </div>
 
 <%= f.hidden_field :user_id, value: current_user.id %>
-
-  <div class="actions">
+      <%= f.label "Destination" %><br>
+    <%= f.select(:destination_id,  options_for_select(Destination.all.collect {|d| [ d.name, d.id ] })) %>
     <%= f.submit %>
   </div>
+</div>
 <% end %>

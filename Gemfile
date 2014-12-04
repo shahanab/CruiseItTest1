@@ -7,7 +7,6 @@ gem 'rails', '4.1.7'
 
 gem 'pg'
 
-gem 'rails_12factor'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -44,3 +43,11 @@ gem 'spring',        group: :development
 
 gem 'devise', '~> 3.4.1'
 
+group :production do
+	gem 'rails_12factor'
+end
+
+group :development do
+	gem 'better_errors'
+	gem 'binding_of_caller'
+end
