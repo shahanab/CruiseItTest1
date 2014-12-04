@@ -27,3 +27,25 @@
 
 <%= link_to 'New Activity', new_itinerary_activity_path %>
 <%= link_to 'Itineraries', itineraries_path %>
+
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyQ6oPEFLaaZ_cxjd3rJkZ3rJ5Y7N3uJo">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: 18.4456, lng: -64.5431},
+          zoom: 12
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+  <body>
+  <div id="map-canvas"></div>
+  </body>
